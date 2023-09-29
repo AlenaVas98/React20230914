@@ -1,20 +1,17 @@
 import { useState } from "react";
-import { Button } from "../../components/Button/ButtonComponent";
+import { Restaurant } from "../../components/Restaurant/Restaurant";
+import { RestaurantTabs } from "../../components/RestaurantTabs/RestaurantTabs";
 import { restaurants } from "../../constans/mock";
-import { RestaurantActive } from "../../components/RestaurantActive/RestaurantActive";
-export const MainPage = () => {
-  const [restaurant, setRestaurant] = useState("Dishoom");
 
+export const MainPage = () => {
+  const [restaurantId, setRestaurantId] = useState(0);
   return (
     <div>
-      {restaurants.map((restaurants) => (
-        <Button
-          key={restaurants.id}
-          text={restaurants.name}
-          onClick={() => setRestaurant(restaurants.name)}
-        />
-      ))}
-      <RestaurantActive name={restaurant} />
+      <RestaurantTabs
+        restaurants={restaurants}
+        onIndexSelect={setRestaurantId}
+      />
+      <Restaurant restaurant={restaurants[restaurantId]} />
     </div>
   );
 };
