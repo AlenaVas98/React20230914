@@ -1,15 +1,13 @@
 import { Review } from "../Review/Review";
-
+import styles from "./Reviews.module.scss";
 export const Reviews = ({ reviews }) => {
   return (
-    <div>
+    <ul className={styles.reviews}>
       {reviews.map((reviews) => (
-        <ul key={reviews.id}>
-          <li>
-            <Review reviews={reviews} />
-          </li>
-        </ul>
+        <li key={reviews.id}>
+          <Review reviews={reviews} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
