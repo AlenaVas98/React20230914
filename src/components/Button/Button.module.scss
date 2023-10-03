@@ -9,6 +9,24 @@
 .button:hover {
   background-color: #dde5b6;
 }
+
 .button:disabled {
   background-color: #bcb8b1;
+}
+
+.dark {
+  background-color: #a98467;
+  color: #dde5b6;
+}
+.dark:hover {
+  background-color: #6c584c;
+  color: #dde5b6;
+}
+
+.button:focus {
+  background-color: #dde5b6;
+}
+
+.dark:focus {
+  background-color: #6c584c;
 }

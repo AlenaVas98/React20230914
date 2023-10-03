@@ -16,9 +16,18 @@
 }
 .tab {
   color: #343a40;
-  background-color: #adc178;
   text-decoration: none;
   font-weight: 700;
   padding: 9px;
   border-radius: 24px;
+}
+.light:hover,
+.light:focus {
+  background-color: #ccd5ae;
+}
+.dark {
+  color: #dde5b6;
+}
+.active {
+  background-color: #6c584c;
 }
