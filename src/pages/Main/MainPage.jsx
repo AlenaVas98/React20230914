@@ -10,7 +10,7 @@ export const MainPage = () => {
   const [restaurantId, setRestaurantId] = useState(0);
   return (
     <div className={styles.wrapper}>
-      <Header />
+      <Header className={styles.header} />
       <div className={styles.content}>
         <RestaurantTabs
           restaurants={restaurants}

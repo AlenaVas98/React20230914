@@ -12,14 +12,12 @@ export const Dish = ({ nameDish }) => {
         text="-"
         onClick={() => setAmount(amount - 1)}
         disabled={amount === 0}
-        className={styles.tab}
       />
       {amount}
       <Button
         text="+"
         onClick={() => setAmount(amount + 1)}
         disabled={amount === 5}
-        className={styles.tab}
       />
     </div>
   );

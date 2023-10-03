@@ -1,8 +1,9 @@
+import classNames from "classnames";
 import styles from "./Header.module.scss";
 
-export const Header = () => {
+export const Header = ({ className }) => {
   return (
-    <header className={styles.header}>
+    <header className={classNames(styles.header, className)}>
       <div className={styles.logoBox}>
         <h2 className={styles.logo}>RestaurantGit</h2>
       </div>
