@@ -38,7 +38,7 @@ export const MainPage = () => {
                   serShowReview(false);
                 }}
               />,
-              document.getElementById("portal")
+              document.getElementById("portalReview")
             )}
         </div>
         <Footer />
