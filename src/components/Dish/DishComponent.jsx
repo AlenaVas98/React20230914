@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Button } from "../Button/ButtonComponent";
+import styles from "./Dish.module.scss";
+import classNames from "classnames";
 
 export const Dish = ({ nameDish }) => {
   const [amount, setAmount] = useState(0);
   return (
-    <div>
+    <div className={classNames(styles.dish)}>
       {nameDish.name} -
       <Button
         text="-"
