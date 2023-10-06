@@ -1,27 +1,3 @@
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)),
-    url("../../img/brooke-lark-wMzx2nBdeng-unsplash.jpg") center center
-      no-repeat;
-  background-size: cover;
-}
-.content {
-  flex: 1 1 auto;
-  margin: 20px 50px;
-}
 .tabsRestaurant {
   margin: 10px 0 20px;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-}
-
-.reviewForm {
-  margin-top: 20px;
 }

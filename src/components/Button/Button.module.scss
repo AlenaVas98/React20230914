@@ -15,18 +15,17 @@
 }
 
 .dark {
-  background-color: #a98467;
+  background-color: #6c584c;
   color: #dde5b6;
 }
 .dark:hover {
-  background-color: #6c584c;
+  background-color: #a98467;
   color: #dde5b6;
 }
 
-.button:focus {
+.active {
   background-color: #dde5b6;
 }
-
-.dark:focus {
-  background-color: #6c584c;
+.activeDark {
+  background-color: #a98467;
 }
