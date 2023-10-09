@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { Button } from "../Button/ButtonComponent";
 import styles from "./ReviewForm.module.scss";
 import { useReducer } from "react";
+import { StarRating } from "../StarRating/StarRating";
 
 const DEFAULT_VALUE = {
   name: "",
@@ -50,7 +51,9 @@ export const ReviewForm = ({ className, onClose }) => {
           dispatch({ type: "setReview", payload: event.target.value });
         }}
       />
-      <input
+
+      <StarRating />
+      {/* <input
         type="number"
         value={formValue.rating}
         className={styles.input}
@@ -58,13 +61,14 @@ export const ReviewForm = ({ className, onClose }) => {
         onChange={(event) => {
           dispatch({ type: "setRating", payload: event.target.value });
         }}
-      />
+      /> */}
       <div className={styles.buttons}>
         <Button text={"Close"} onClick={onClose} />
         <Button
           text={"Add Review"}
           onClick={() => {
             dispatch({ type: "reset" });
+            onClose();
           }}
         />
       </div>
