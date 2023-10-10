@@ -1,0 +1,27 @@
+.root {
+  background-color: #f0ead2;
+  width: 300px;
+  height: 250px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.input {
+  outline: none;
+  padding: 5px;
+  border: 2px solid #adc178;
+  width: 90%;
+  border-radius: 20px;
+}
+
+.input:focus {
+  border: 2px solid #dde5b6;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}

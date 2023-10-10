@@ -6,6 +6,9 @@
   padding: 10px;
   border-radius: 10px;
 }
-.tabs:focus {
+.tab:focus {
   background-color: #dde5b6;
+}
+.dark:focus {
+  background-color: #6c584c;
 }
