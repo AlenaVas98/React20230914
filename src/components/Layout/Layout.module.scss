@@ -1,0 +1,28 @@
+.wrapper {
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)),
+    url("../../img/brooke-lark-wMzx2nBdeng-unsplash.jpg") center center
+      no-repeat;
+  background-size: cover;
+}
+.content {
+  flex: 1 1 auto;
+  margin: 20px 50px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.reviewModal {
+  z-index: 1;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
