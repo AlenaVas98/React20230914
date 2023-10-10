@@ -1,8 +1,5 @@
 .button {
   border: none;
-  padding: 8px;
-  border-radius: 6px;
-  font-size: 16px;
   background-color: #adc178;
 }
 
@@ -28,4 +25,21 @@
 }
 .activeDark {
   background-color: #a98467;
+}
+
+.s {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.m {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.l {
+  padding: 8px;
+  font-size: 16px;
 }

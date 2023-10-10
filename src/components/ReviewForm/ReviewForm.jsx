@@ -1,8 +1,8 @@
-import classNames from "classnames";
 import { Button } from "../Button/ButtonComponent";
-import styles from "./ReviewForm.module.scss";
 import { useReducer } from "react";
 import { StarRating } from "../StarRating/StarRating";
+import classNames from "classnames";
+import styles from "./ReviewForm.module.scss";
 
 const DEFAULT_VALUE = {
   name: "",
@@ -63,14 +63,15 @@ export const ReviewForm = ({ className, onClose }) => {
         }}
       /> */}
       <div className={styles.buttons}>
-        <Button text={"Close"} onClick={onClose} />
+        <Button onClick={onClose}>Close</Button>
         <Button
-          text={"Add Review"}
           onClick={() => {
             dispatch({ type: "reset" });
             onClose();
           }}
-        />
+        >
+          Add Review
+        </Button>
       </div>
     </div>
   );
