@@ -1,8 +1,8 @@
-import classNames from "classnames";
-import styles from "./Header.module.scss";
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/Theme";
 import { Button } from "../Button/ButtonComponent";
+import classNames from "classnames";
+import styles from "./Header.module.scss";
 
 export const Header = ({ className }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -12,22 +12,16 @@ export const Header = ({ className }) => {
         <h2 className={styles.logo}>RestaurantGit</h2>
       </div>
       <div className={styles.nav}>
-        {/* <Button
-          className={classNames(styles.tab, {
-            [styles.dark]: theme === "dark",
-            [styles.light]: theme === "light",
-          })}
-          onClick={toggleTheme}
-          text={"Light theme"}
-        /> */}
         <Button
           className={classNames(styles.tab, {
             [styles.dark]: theme === "dark",
             [styles.light]: theme === "light",
           })}
           onClick={toggleTheme}
-          text={"Dark theme"}
-        />
+          size="m"
+        >
+          Dark theme
+        </Button>
       </div>
     </header>
   );

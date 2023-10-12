@@ -8,17 +8,13 @@ export const Dish = ({ nameDish }) => {
   return (
     <div className={classNames(styles.dish)}>
       {nameDish.name} -
-      <Button
-        text="-"
-        onClick={() => setAmount(amount - 1)}
-        disabled={amount === 0}
-      />
+      <Button onClick={() => setAmount(amount - 1)} disabled={amount === 0}>
+        -
+      </Button>
       {amount}
-      <Button
-        text="+"
-        onClick={() => setAmount(amount + 1)}
-        disabled={amount === 5}
-      />
+      <Button onClick={() => setAmount(amount + 1)} disabled={amount === 5}>
+        +
+      </Button>
     </div>
   );
 };

@@ -2,20 +2,19 @@ import React, { useState } from "react";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 import { createPortal } from "react-dom";
 import { Button } from "../Button/ButtonComponent";
-import styles from "./AddReviewForm.module.scss";
 
-export const AddReviewForm = () => {
+export const AddReviewForm = ({ className }) => {
   const [showReview, serShowReview] = useState(false);
   return (
     <React.Fragment>
       <Button
-        text={"Add Review"}
         onClick={() => {
           serShowReview(true);
         }}
-        className={styles.button}
-      />
-
+        className={className}
+      >
+        Add Review
+      </Button>
       {showReview &&
         createPortal(
           <ReviewForm

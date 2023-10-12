@@ -12,11 +12,12 @@ export const RestaurantTabs = ({
       {restaurants.map((restaurant, index) => (
         <Button
           key={restaurant.id}
-          text={restaurant.name}
           isActive={index === activeTabIndex}
           onClick={() => onIndexSelect(index)}
-          className={styles.tabs}
-        />
+          size="m"
+        >
+          {restaurant.name}
+        </Button>
       ))}
     </div>
   );
