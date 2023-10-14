@@ -1,22 +1,24 @@
+import { useSelector } from "react-redux";
 import classNames from "classnames";
 import { Button } from "../Button/ButtonComponent";
 import styles from "./RestaurantTabs.module.scss";
 export const RestaurantTabs = ({
-  restaurants,
   onIndexSelect,
   className,
   activeTabIndex,
+  restaurantId,
 }) => {
+  const restaurant = useSelector((state) => state.restaurant.entities);
   return (
     <div className={classNames(styles.root, className)}>
-      {restaurants.map((restaurant, index) => (
+      {restaurantId.map((id) => (
         <Button
-          key={restaurant.id}
-          isActive={index === activeTabIndex}
-          onClick={() => onIndexSelect(index)}
+          key={id}
+          isActive={id === activeTabIndex}
+          onClick={() => onIndexSelect(id)}
           size="m"
         >
-          {restaurant.name}
+          {restaurant[id].name}
         </Button>
       ))}
     </div>
