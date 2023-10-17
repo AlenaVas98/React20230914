@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Restaurant } from "../../components/Restaurant/Restaurant";
-import { RestaurantTabs } from "../../components/RestaurantTabs/RestaurantTabs";
 
 import styles from "./MainPage.module.scss";
 import { Layout } from "../../components/Layout/Layout";
 import { useSelector } from "react-redux";
 import { selectRestaurantIds } from "../../redux/entities/restaurant/selectors";
+import { RestaurantTabsContainer } from "../../components/RestaurantTabs/container";
+import { RestaurantContainer } from "../../components/Restaurant/container";
 
 export const MainPage = () => {
   const restaurantIds = useSelector(selectRestaurantIds);
@@ -15,13 +15,12 @@ export const MainPage = () => {
 
   return (
     <Layout>
-      <RestaurantTabs
-        restaurantId={restaurantIds}
+      <RestaurantTabsContainer
         onIndexSelect={setActiveRestaurantId}
         activeTabIndex={activeRestaurantId}
         className={styles.tabsRestaurant}
       />
-      <Restaurant restaurantId={activeRestaurantId} />
+      <RestaurantContainer restaurantId={activeRestaurantId} />
     </Layout>
   );
 };
