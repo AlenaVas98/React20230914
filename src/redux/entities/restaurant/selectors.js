@@ -1,7 +1,6 @@
-const selectorRestaurantModule = (state) => state.restaurant;
+const selectRestaurantModule = (state) => state.restaurant;
 
-export const selectorRestaurantById = (state, id) =>
-  selectorRestaurantModule(state).entities[id];
+export const selectRestaurantById = (state, id) =>
+  selectRestaurantModule(state).entities[id];
 
-export const selectorRestaurantIds = (state) =>
-  selectorRestaurantModule(state).ids;
+export const selectRestaurantIds = (state) => selectRestaurantModule(state).ids;

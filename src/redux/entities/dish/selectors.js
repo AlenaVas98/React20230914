@@ -1,6 +1,6 @@
-const selectorDishModule = (state) => state.dish;
+const selectDishModule = (state) => state.dish;
 
-export const selectorDishById = (state, id) =>
-  selectorDishModule(state).entities[id];
+export const selectDishById = (state, id) =>
+  selectDishModule(state).entities[id];
 
-export const selectorDishIds = (state) => selectorDishModule(state).ids;
+export const selectDishIds = (state) => selectDishModule(state).ids;

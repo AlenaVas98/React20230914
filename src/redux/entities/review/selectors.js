@@ -1,6 +1,6 @@
-const selectorReviewModule = (state) => state.review;
+const selectReviewModule = (state) => state.review;
 
-export const selectorReviewById = (state, id) =>
-  selectorReviewModule(state).entities[id];
+export const selectReviewById = (state, id) =>
+  selectReviewModule(state).entities[id];
 
-export const selectorReviewIds = (state) => selectorReviewModule(state).ids;
+export const selectReviewIds = (state) => selectReviewModule(state).ids;
