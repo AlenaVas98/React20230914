@@ -5,12 +5,14 @@ import { getDishes } from "../../redux/entities/dish/thunks/get-dishes";
 import { selectDishLoadingStatus } from "../../redux/entities/dish/selectors";
 import { REQUEST_STATUS } from "../../constans/statuses";
 
-export const MenuContainer = (props) => {
+export const MenuContainer = ({ restaurantId, ...props }) => {
   const loadingStatus = useSelector(selectDishLoadingStatus);
+
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(getDishes());
-  }, []);
+    dispatch(getDishes(restaurantId));
+  }, [restaurantId]);
 
   return (
     <>

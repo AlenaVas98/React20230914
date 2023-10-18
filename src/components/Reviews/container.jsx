@@ -6,13 +6,13 @@ import { selectReviewLoadingStatus } from "../../redux/entities/review/selectors
 import { REQUEST_STATUS } from "../../constans/statuses";
 import { getUsers } from "../../redux/entities/user/thunks/get-users";
 
-export const ReviewsContainer = (props) => {
+export const ReviewsContainer = ({ restaurantId, ...props }) => {
   const dispatch = useDispatch();
   const loadingStatus = useSelector(selectReviewLoadingStatus);
   useEffect(() => {
-    dispatch(getReviews());
+    dispatch(getReviews(restaurantId));
     dispatch(getUsers());
-  }, []);
+  }, [restaurantId]);
   return (
     <>
       {loadingStatus === REQUEST_STATUS.pending ? (
