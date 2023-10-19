@@ -1,21 +1,21 @@
 import classNames from "classnames";
 
 import styles from "./RestaurantTabs.module.scss";
-import { RestaurantTab } from "../RestaurantTab/RestaurantTab";
+import { RestaurantTabContainer } from "../RestaurantTab/container";
 export const RestaurantTabs = ({
   onIndexSelect,
   className,
   activeTabIndex,
-  restaurantId,
+  restaurantIds,
 }) => {
   return (
     <div className={classNames(styles.root, className)}>
-      {restaurantId.map((id) => (
-        <RestaurantTab
+      {restaurantIds.map((id) => (
+        <RestaurantTabContainer
           key={id}
           isActive={id === activeTabIndex}
           onClick={() => onIndexSelect(id)}
-          RestaurantTabId={id}
+          restaurantId={id}
           size="m"
         />
       ))}
