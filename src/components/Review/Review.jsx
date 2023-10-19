@@ -1,8 +1,9 @@
 import styles from "./Review.module.scss";
-export const Review = ({ reviews }) => {
+import { UserContainer } from "../User/container";
+export const Review = ({ review }) => {
   return (
     <div className={styles.root}>
-      {reviews.user}: {reviews.text}
+      <UserContainer userId={review.userId} />: {review.text}
     </div>
   );
 };
