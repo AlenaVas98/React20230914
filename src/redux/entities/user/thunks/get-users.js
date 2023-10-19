@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { selectUserById } from "../selectors";
+import { selectUserIds } from "../selectors";
 
 export const getUsers = createAsyncThunk(
   "users/getUsers",
@@ -10,7 +10,7 @@ export const getUsers = createAsyncThunk(
   },
   {
     condition: (_, { getState }) => {
-      selectUserById(getState())?.length;
+      selectUserIds(getState())?.length;
     },
   }
 );

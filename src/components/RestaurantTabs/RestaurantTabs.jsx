@@ -15,7 +15,7 @@ export const RestaurantTabs = ({
           key={id}
           isActive={id === activeTabIndex}
           onClick={() => onIndexSelect(id)}
-          RestaurantId={id}
+          restaurantId={id}
           size="m"
         />
       ))}
