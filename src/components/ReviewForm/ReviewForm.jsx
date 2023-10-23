@@ -28,8 +28,6 @@ const reducer = (state, action) => {
 
 export const ReviewForm = ({ className, onClose }) => {
   const [formValue, dispatch] = useReducer(reducer, DEFAULT_VALUE);
-
-  console.log(formValue);
   return (
     <div className={classNames(styles.root, className)}>
       <h3>Add your review</h3>
