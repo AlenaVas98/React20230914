@@ -1,5 +1,5 @@
 export const REQUEST_STATUS = {
-  idle: "idele",
+  idle: "idle",
   pending: "pending",
   fulfilled: "fulfilled",
   rejected: "rejected",

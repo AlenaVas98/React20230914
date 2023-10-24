@@ -5,20 +5,21 @@ import { Layout } from "../../components/Layout/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectRestaurantIds,
-  selectRestaurantLoadingStatus,
+  selectRestaurantLoading,
 } from "../../redux/entities/restaurant/selectors";
 import { RestaurantTabsContainer } from "../../components/RestaurantTabs/container";
 import { RestaurantContainer } from "../../components/Restaurant/container";
 import { getRestaurants } from "../../redux/entities/restaurant/thunks/get-restaurants";
 import { REQUEST_STATUS } from "../../constans/statuses";
+import { Cart } from "../../components/Cart/Cart";
 
 export const MainPage = () => {
+  const dispatch = useDispatch();
   const restaurantIds = useSelector(selectRestaurantIds);
+  const loadingStatus = useSelector(selectRestaurantLoading);
   const [activeRestaurantId, setActiveRestaurantId] = useState(
     restaurantIds[0]
   );
-  const loadingStatus = useSelector(selectRestaurantLoadingStatus);
-  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRestaurants());
   }, []);
@@ -34,7 +35,10 @@ export const MainPage = () => {
           className={styles.tabsRestaurant}
         />
       )}
-      <RestaurantContainer restaurantId={activeRestaurantId} />
+      <div className={styles.box}>
+        <RestaurantContainer restaurantId={activeRestaurantId} />
+        <Cart />
+      </div>
     </Layout>
   );
 };
