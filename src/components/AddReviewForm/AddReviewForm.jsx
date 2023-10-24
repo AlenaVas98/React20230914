@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { ReviewForm } from "../ReviewForm/ReviewForm";
 import { createPortal } from "react-dom";
 import { Button } from "../Button/ButtonComponent";
+import { ReviewForm } from "../ReviewForm/ReviewForm";
 
-export const AddReviewForm = ({ className }) => {
+export const AddReviewForm = ({ className, restaurantId }) => {
   const [showReview, serShowReview] = useState(false);
   return (
     <React.Fragment>
@@ -21,6 +21,7 @@ export const AddReviewForm = ({ className }) => {
             onClose={() => {
               serShowReview(false);
             }}
+            restaurantId={restaurantId}
           />,
           document.getElementById("portalReview")
         )}

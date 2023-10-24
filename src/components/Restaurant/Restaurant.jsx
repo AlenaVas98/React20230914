@@ -11,7 +11,7 @@ export const Restaurant = ({ restaurant }) => {
       <h1 className={styles.name}>{name}</h1>
       <MenuContainer restaurantId={id} menu={menu} />
       <ReviewsContainer restaurantId={id} reviews={reviews} />
-      <AddReviewForm className={styles.button} />
+      <AddReviewForm className={styles.button} restaurantId={id} />
     </div>
   );
 };

@@ -3,7 +3,6 @@ const { reducer, actions } = createSlice({
   name: "cart",
   initialState: {
     items: [],
-    totalQuantity: 0,
   },
   reducers: {
     increment: (state, { payload }) => {

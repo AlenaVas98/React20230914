@@ -6,6 +6,16 @@ const entityAdapter = createEntityAdapter();
 const { reducer, actions } = createSlice({
   name: "restaurant",
   initialState: entityAdapter.getInitialState(),
+  reducers: {
+    addReview: (state, { payload: { restaurantId, reviewId } }) => {
+      entityAdapter.updateOne(state, {
+        id: restaurantId,
+        changes: {
+          reviews: [...state.entities[restaurantId].reviews, reviewId],
+        },
+      });
+    },
+  },
   extraReducers: (builder) =>
     builder.addCase(getRestaurants.fulfilled, (state, { payload } = {}) => {
       entityAdapter.setAll(state, payload);
