@@ -1,21 +1,21 @@
-import { REQUEST_STATUS } from "../../constans/statuses";
-import { useMakeRequest } from "../../hooks/use-make-request";
-import { createReview } from "../../redux/entities/review/thunks/create-review";
+import { useCreateReviewMutation } from "../../redux/services/api";
 import { ReviewForm } from "./ReviewForm";
 
 export const ReviewFormContainer = ({ restaurantId, ...props }) => {
-  const [addReviewstatus, addReview] = useMakeRequest(createReview);
+  const [createReview, { isLoading }] = useCreateReviewMutation();
   return (
     <>
-      {addReviewstatus === REQUEST_STATUS.loading ? (
+      {isLoading ? (
         <div>Loading...</div>
       ) : (
         <ReviewForm
           onSubmit={(form) => {
-            addReview({
+            createReview({
               restaurantId,
-              newReview: form,
-              userId: "1547335a-ea18-4547-a73d-32bd6e9f651c",
+              newReview: {
+                ...form,
+                userId: "1547335a-ea18-4547-a73d-32bd6e9f651c",
+              },
             });
           }}
           {...props}

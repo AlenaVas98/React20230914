@@ -1,3 +1,3 @@
-export const User = ({ user }) => {
-  return <span>{user.name}</span>;
+export const User = ({ userName }) => {
+  return <span>{userName}</span>;
 };

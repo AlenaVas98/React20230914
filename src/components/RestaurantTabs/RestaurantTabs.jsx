@@ -2,22 +2,20 @@ import classNames from "classnames";
 
 import styles from "./RestaurantTabs.module.scss";
 import { RestaurantTabContainer } from "../RestaurantTab/container";
-export const RestaurantTabs = ({
-  onIndexSelect,
-  className,
-  activeTabIndex,
-  restaurantIds,
-}) => {
+import { NavLink } from "react-router-dom";
+export const RestaurantTabs = ({ className, restarants }) => {
   return (
     <div className={classNames(styles.root, className)}>
-      {restaurantIds.map((id) => (
-        <RestaurantTabContainer
+      {restarants.map(({ id, name }) => (
+        <NavLink
           key={id}
-          isActive={id === activeTabIndex}
-          onClick={() => onIndexSelect(id)}
-          restaurantId={id}
-          size="m"
-        />
+          to={id}
+          className={({ isActive }) =>
+            classNames({ [styles.activeTab]: isActive })
+          }
+        >
+          <RestaurantTabContainer restauranName={name} size="m" />
+        </NavLink>
       ))}
     </div>
   );

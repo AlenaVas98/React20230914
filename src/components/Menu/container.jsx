@@ -1,18 +1,9 @@
 import { Menu } from "./Menu";
-import { getDishes } from "../../redux/entities/dish/thunks/get-dishes";
-import { REQUEST_STATUS } from "../../constans/statuses";
-import { useRequest } from "../../hooks/use-request";
+import { useGetDishsQuery } from "../../redux/services/api";
 
 export const MenuContainer = ({ restaurantId, ...props }) => {
-  const menuLoadingStatus = useRequest(getDishes, restaurantId);
-
+  const { data, isFetching } = useGetDishsQuery(restaurantId);
   return (
-    <>
-      {menuLoadingStatus === REQUEST_STATUS.pending ? (
-        <div>Loading...</div>
-      ) : (
-        <Menu {...props} />
-      )}
-    </>
+    <>{isFetching ? <div>Loading...</div> : <Menu {...props} data={data} />}</>
   );
 };
