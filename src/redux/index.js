@@ -6,6 +6,7 @@ import dish from "./entities/dish";
 import { loggerMiddleware } from "./middlewares/logger";
 import request from "./ui/request";
 import cart from "./ui/cart/index";
+import { api } from "./services/api";
 
 const store = configureStore({
   reducer: {
@@ -15,9 +16,11 @@ const store = configureStore({
     review,
     request,
     cart,
+    [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware(),
+    api.middleware,
     loggerMiddleware,
   ],
 });

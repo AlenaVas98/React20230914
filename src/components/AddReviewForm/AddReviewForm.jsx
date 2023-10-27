@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "../Button/ButtonComponent";
-import { ReviewForm } from "../ReviewForm/ReviewForm";
+import { ReviewFormContainer } from "../ReviewForm/container";
 
 export const AddReviewForm = ({ className, restaurantId }) => {
   const [showReview, serShowReview] = useState(false);
@@ -17,7 +17,7 @@ export const AddReviewForm = ({ className, restaurantId }) => {
       </Button>
       {showReview &&
         createPortal(
-          <ReviewForm
+          <ReviewFormContainer
             onClose={() => {
               serShowReview(false);
             }}

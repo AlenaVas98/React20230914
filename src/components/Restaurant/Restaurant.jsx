@@ -1,17 +1,17 @@
+import { Outlet } from "react-router-dom";
 import { AddReviewForm } from "../AddReviewForm/AddReviewForm";
+import styles from "./Restaurant.module.scss";
 import { MenuContainer } from "../Menu/container";
 import { ReviewsContainer } from "../Reviews/container";
-import styles from "./Restaurant.module.scss";
 
 export const Restaurant = ({ restaurant }) => {
-  const { name, menu, reviews, id } = restaurant;
-  console.log(restaurant);
   return (
     <div className={styles.restaurant}>
-      <h1 className={styles.name}>{name}</h1>
-      <MenuContainer restaurantId={id} menu={menu} />
-      <ReviewsContainer restaurantId={id} reviews={reviews} />
-      <AddReviewForm className={styles.button} restaurantId={id} />
+      <h1 className={styles.name}>{restaurant.name}</h1>
+      <MenuContainer restaurantId={restaurant.id} />
+      <ReviewsContainer restaurantId={restaurant.id} />
+      <AddReviewForm className={styles.button} restaurantId={restaurant.id} />
+      <Outlet />
     </div>
   );
 };
